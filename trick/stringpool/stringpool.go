@@ -65,6 +65,7 @@ func PutStringSlice(str []string) {
 		idx := minB
 		for idx <= maxB {
 			if 1<<idx == l { // 检查是否为2的幂
+				str = str[:0] // reset length
 				arr[idx-minB].pool.Put(str)
 			}
 			idx++
